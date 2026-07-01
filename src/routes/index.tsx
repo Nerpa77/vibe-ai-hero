@@ -171,7 +171,7 @@ function FeaturedProjects() {
           </p>
         </div>
 
-        <div className="grid flex-1 grid-cols-1 gap-3 md:grid-cols-2 lg:grid-cols-3 lg:gap-8">
+        <div className="grid flex-1 grid-cols-1 gap-3 lg:grid-cols-3 lg:gap-8">
           {projects.map((p) => (
             <ProjectCard key={p.title} project={p} />
           ))}
