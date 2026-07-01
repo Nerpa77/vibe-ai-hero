@@ -207,22 +207,20 @@ function ProjectCard({ project }: { project: (typeof projects)[number] }) {
         className="relative aspect-square w-28 shrink-0 overflow-hidden lg:aspect-[4/3] lg:w-full"
         style={{ background: project.gradient }}
       >
+        <img
+          src={project.image}
+          alt={`Превью проекта ${project.title}`}
+          width={1024}
+          height={768}
+          loading="lazy"
+          className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+        />
         <div
           aria-hidden
-          className="absolute inset-0 opacity-30"
-          style={{
-            backgroundImage:
-              "linear-gradient(oklch(1 0 0 / 0.08) 1px, transparent 1px), linear-gradient(90deg, oklch(1 0 0 / 0.08) 1px, transparent 1px)",
-            backgroundSize: "24px 24px",
-          }}
+          className="absolute inset-0"
+          style={{ background: `linear-gradient(180deg, transparent 40%, oklch(0.15 0.05 280 / 0.6) 100%), ${project.gradient}`, mixBlendMode: "overlay" }}
         />
-        <div className="absolute inset-0 flex items-center justify-center">
-          <Sparkle
-            className="h-8 w-8 transition-transform duration-500 group-hover:scale-110 group-hover:rotate-12 lg:h-16 lg:w-16"
-            style={{ color: accentColor, filter: `drop-shadow(0 0 24px ${accentColor})` }}
-            aria-hidden
-          />
-        </div>
+
         <div className="absolute right-2 top-2 hidden h-10 w-10 items-center justify-center rounded-full bg-background/60 backdrop-blur-md transition-transform duration-300 group-hover:-translate-y-1 group-hover:translate-x-1 lg:flex lg:right-4 lg:top-4">
           <ArrowUpRight className="h-5 w-5 text-foreground" />
         </div>
