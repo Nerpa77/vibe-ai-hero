@@ -37,7 +37,7 @@ function Index() {
       {/* Hero */}
       <section className="relative z-10 mx-auto grid max-w-7xl items-center gap-12 px-6 pb-20 pt-8 lg:grid-cols-2 lg:gap-6 lg:px-10 lg:pb-32 lg:pt-16">
         {/* Left column */}
-        <div className="order-2 lg:order-1">
+        <div className="order-1 lg:order-1">
           <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-border bg-card/40 px-4 py-1.5 text-xs uppercase tracking-widest text-muted-foreground backdrop-blur-sm">
             <Sparkle className="h-3 w-3 text-neon-lime" />
             AI · Vibecoding · MVP
@@ -51,24 +51,24 @@ function Index() {
             через вайбкодинг
           </h1>
 
-          <p className="mt-6 max-w-xl text-base text-muted-foreground sm:text-lg">
+          <p className="mt-6 max-w-xl text-base text-muted-foreground sm:text-lg" style={{ fontSize: "clamp(1rem, 4vw, 1.125rem)" }}>
             Быстро собираю MVP, лендинги и веб-приложения с помощью современных AI-инструментов.
           </p>
 
-          <p className="mt-6 text-sm uppercase tracking-[0.3em] text-muted-foreground">
+          <p className="mt-6 text-base uppercase tracking-[0.3em] text-muted-foreground sm:text-sm">
             Быстро. Гибко. С душой.
           </p>
 
-          <div className="mt-10 flex flex-col gap-4 sm:flex-row">
+          <div className="mt-10 flex w-full flex-col gap-4 sm:flex-row">
             <a
               href="#projects"
-              className="inline-flex items-center justify-center rounded-full bg-neon-lime px-8 py-4 font-display text-sm font-semibold uppercase tracking-wider text-neon-lime-foreground shadow-glow-lime transition-all duration-200 hover:-translate-y-1 hover:brightness-90 hover:shadow-[0_12px_50px_oklch(0.92_0.24_130/0.6)] active:translate-y-0"
+              className="inline-flex w-full items-center justify-center rounded-full bg-neon-lime px-8 py-5 font-display text-base font-semibold uppercase tracking-wider text-neon-lime-foreground shadow-glow-lime transition-all duration-200 hover:-translate-y-1 hover:brightness-90 hover:shadow-[0_12px_50px_oklch(0.92_0.24_130/0.6)] active:translate-y-0 sm:w-auto sm:py-4 sm:text-sm"
             >
               Посмотреть проекты
             </a>
             <a
               href="#contact"
-              className="inline-flex items-center justify-center rounded-full border-2 px-8 py-4 font-display text-sm font-semibold uppercase tracking-wider text-foreground transition-all duration-200 hover:-translate-y-1 hover:brightness-90 hover:bg-[oklch(0.55_0.28_310/0.25)] active:translate-y-0"
+              className="inline-flex w-full items-center justify-center rounded-full border-2 px-8 py-5 font-display text-base font-semibold uppercase tracking-wider text-foreground transition-all duration-200 hover:-translate-y-1 hover:brightness-90 hover:bg-[oklch(0.55_0.28_310/0.25)] active:translate-y-0 sm:w-auto sm:py-4 sm:text-sm"
               style={{
                 borderColor: "var(--neon-purple)",
                 boxShadow: "var(--glow-purple)",
@@ -81,7 +81,7 @@ function Index() {
         </div>
 
         {/* Right column — visual */}
-        <div className="relative order-1 flex items-center justify-center lg:order-2">
+        <div className="relative order-2 flex items-center justify-center lg:order-2">
           <div className="relative aspect-square w-full max-w-[420px] lg:max-w-[560px]">
             <img
               src={heroVibe}
