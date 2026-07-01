@@ -145,39 +145,40 @@ const projects = [
 
 function FeaturedProjects() {
   return (
-    <section id="projects" className="relative overflow-hidden bg-hero-gradient px-6 py-20 lg:px-10 lg:py-32">
+    <section id="projects" className="relative flex min-h-[100dvh] flex-col overflow-hidden bg-hero-gradient px-5 py-8 lg:min-h-0 lg:px-10 lg:py-32">
       <div
         aria-hidden
         className="pointer-events-none absolute left-1/2 top-0 h-[400px] w-[600px] -translate-x-1/2 rounded-full opacity-40 blur-3xl"
         style={{ background: "radial-gradient(circle, oklch(0.55 0.28 340 / 0.5), transparent 70%)" }}
       />
 
-      <div className="relative z-10 mx-auto w-full max-w-7xl">
-        <div className="mb-10 flex flex-col items-start justify-between gap-4 lg:mb-16 lg:flex-row lg:items-end">
+      <div className="relative z-10 mx-auto flex w-full max-w-7xl flex-1 flex-col">
+        <div className="mb-5 flex flex-col items-start justify-between gap-3 lg:mb-16 lg:flex-row lg:items-end lg:gap-4">
           <div>
-            <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-border bg-card/40 px-4 py-1.5 text-xs uppercase tracking-widest text-muted-foreground backdrop-blur-sm">
+            <div className="mb-2 inline-flex items-center gap-2 rounded-full border border-border bg-card/40 px-3 py-1 text-[10px] uppercase tracking-widest text-muted-foreground backdrop-blur-sm lg:mb-4 lg:px-4 lg:py-1.5 lg:text-xs">
               <Sparkle className="h-3 w-3 text-neon-lime" />
               Портфолио
             </div>
-            <h2 className="font-display text-3xl font-bold uppercase leading-[1.15] tracking-tight text-foreground sm:text-4xl lg:text-5xl">
+            <h2 className="font-display text-2xl font-bold uppercase leading-[1.15] tracking-tight text-foreground sm:text-4xl lg:text-5xl">
               Избранные{" "}
               <span className="text-neon-lime" style={{ textShadow: "0 0 30px oklch(0.92 0.24 130 / 0.5)" }}>
                 проекты
               </span>
             </h2>
           </div>
-          <p className="max-w-md text-base text-muted-foreground">
+          <p className="hidden max-w-md text-base text-muted-foreground lg:block">
             Кейсы, собранные через вайбкодинг: от идеи до продакшена за считанные дни.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 lg:gap-8">
+        <div className="grid flex-1 grid-cols-1 gap-3 md:grid-cols-2 lg:grid-cols-3 lg:gap-8">
           {projects.map((p) => (
             <ProjectCard key={p.title} project={p} />
           ))}
         </div>
       </div>
     </section>
+
   );
 }
 
@@ -191,14 +192,11 @@ function ProjectCard({ project }: { project: (typeof projects)[number] }) {
 
   return (
     <article
-      className="group relative flex flex-col overflow-hidden rounded-3xl border border-border bg-card/40 backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-transparent"
-      style={{
-        boxShadow: `0 0 0 1px transparent`,
-      }}
+      className="group relative flex flex-row overflow-hidden rounded-2xl border border-border bg-card/40 backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-transparent lg:flex-col lg:rounded-3xl"
     >
       {/* Preview */}
       <div
-        className="relative aspect-[4/3] w-full overflow-hidden"
+        className="relative aspect-square w-28 shrink-0 overflow-hidden lg:aspect-[4/3] lg:w-full"
         style={{ background: project.gradient }}
       >
         <div
@@ -212,27 +210,29 @@ function ProjectCard({ project }: { project: (typeof projects)[number] }) {
         />
         <div className="absolute inset-0 flex items-center justify-center">
           <Sparkle
-            className="h-16 w-16 transition-transform duration-500 group-hover:scale-110 group-hover:rotate-12"
+            className="h-8 w-8 transition-transform duration-500 group-hover:scale-110 group-hover:rotate-12 lg:h-16 lg:w-16"
             style={{ color: accentColor, filter: `drop-shadow(0 0 24px ${accentColor})` }}
             aria-hidden
           />
         </div>
-        <div className="absolute right-4 top-4 flex h-10 w-10 items-center justify-center rounded-full bg-background/60 backdrop-blur-md transition-transform duration-300 group-hover:-translate-y-1 group-hover:translate-x-1">
+        <div className="absolute right-2 top-2 hidden h-10 w-10 items-center justify-center rounded-full bg-background/60 backdrop-blur-md transition-transform duration-300 group-hover:-translate-y-1 group-hover:translate-x-1 lg:flex lg:right-4 lg:top-4">
           <ArrowUpRight className="h-5 w-5 text-foreground" />
         </div>
       </div>
 
       {/* Body */}
-      <div className="flex flex-1 flex-col gap-4 p-6">
-        <h3 className="font-display text-2xl font-bold uppercase tracking-tight text-foreground">
+      <div className="flex flex-1 flex-col gap-1.5 p-3 lg:gap-4 lg:p-6">
+        <h3 className="font-display text-base font-bold uppercase tracking-tight text-foreground lg:text-2xl">
           {project.title}
         </h3>
-        <p className="text-base text-muted-foreground">{project.description}</p>
-        <ul className="mt-auto flex flex-wrap gap-2 pt-2">
+        <p className="line-clamp-2 text-xs text-muted-foreground lg:line-clamp-none lg:text-base">
+          {project.description}
+        </p>
+        <ul className="mt-auto flex flex-wrap gap-1 pt-1 lg:gap-2 lg:pt-2">
           {project.tags.map((tag) => (
             <li
               key={tag}
-              className="rounded-full border border-border bg-background/40 px-3 py-1 text-xs font-medium uppercase tracking-wider text-muted-foreground"
+              className="rounded-full border border-border bg-background/40 px-2 py-0.5 text-[10px] font-medium uppercase tracking-wider text-muted-foreground lg:px-3 lg:py-1 lg:text-xs"
             >
               {tag}
             </li>
@@ -243,10 +243,11 @@ function ProjectCard({ project }: { project: (typeof projects)[number] }) {
       {/* Accent border on hover */}
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-0 rounded-3xl opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+        className="pointer-events-none absolute inset-0 rounded-2xl opacity-0 transition-opacity duration-300 group-hover:opacity-100 lg:rounded-3xl"
         style={{ boxShadow: `0 0 0 1px ${accentColor}, 0 20px 60px -20px ${accentColor}` }}
       />
     </article>
   );
+
 }
 
