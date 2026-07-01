@@ -130,6 +130,7 @@ const projects = [
     tags: ["React", "OpenAI", "Supabase", "Tailwind"],
     accent: "lime" as const,
     gradient: "linear-gradient(135deg, oklch(0.92 0.24 130 / 0.35), oklch(0.55 0.28 200 / 0.35))",
+    image: projectStudyflow,
   },
   {
     title: "НейроАналитик",
@@ -137,6 +138,7 @@ const projects = [
     tags: ["Next.js", "Python", "LangChain", "Recharts"],
     accent: "purple" as const,
     gradient: "linear-gradient(135deg, oklch(0.68 0.28 310 / 0.4), oklch(0.45 0.28 260 / 0.4))",
+    image: projectNeuroanalyst,
   },
   {
     title: "LaunchPro",
@@ -144,8 +146,10 @@ const projects = [
     tags: ["Vite", "Framer Motion", "TS", "Stripe"],
     accent: "magenta" as const,
     gradient: "linear-gradient(135deg, oklch(0.65 0.30 340 / 0.4), oklch(0.55 0.28 20 / 0.4))",
+    image: projectLaunchpro,
   },
 ];
+
 
 function FeaturedProjects() {
   return (
