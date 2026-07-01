@@ -2,6 +2,10 @@ import { createFileRoute } from "@tanstack/react-router";
 import { ArrowDown, Sparkle, ArrowUpRight } from "lucide-react";
 
 import heroVibe from "@/assets/hero-vibe.png";
+import projectStudyflow from "@/assets/project-studyflow.jpg";
+import projectNeuroanalyst from "@/assets/project-neuroanalyst.jpg";
+import projectLaunchpro from "@/assets/project-launchpro.jpg";
+
 
 export const Route = createFileRoute("/")({
   component: Index,
