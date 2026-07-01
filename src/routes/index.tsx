@@ -62,13 +62,13 @@ function Index() {
           <div className="mt-10 flex flex-col gap-4 sm:flex-row">
             <a
               href="#projects"
-              className="inline-flex items-center justify-center rounded-full bg-neon-lime px-8 py-4 font-display text-sm font-semibold uppercase tracking-wider text-neon-lime-foreground shadow-glow-lime transition-transform hover:scale-105"
+              className="inline-flex items-center justify-center rounded-full bg-neon-lime px-8 py-4 font-display text-sm font-semibold uppercase tracking-wider text-neon-lime-foreground shadow-glow-lime transition-all duration-200 hover:-translate-y-1 hover:brightness-90 hover:shadow-[0_12px_50px_oklch(0.92_0.24_130/0.6)] active:translate-y-0"
             >
               Посмотреть проекты
             </a>
             <a
               href="#contact"
-              className="inline-flex items-center justify-center rounded-full border-2 px-8 py-4 font-display text-sm font-semibold uppercase tracking-wider text-foreground transition-transform hover:scale-105"
+              className="inline-flex items-center justify-center rounded-full border-2 px-8 py-4 font-display text-sm font-semibold uppercase tracking-wider text-foreground transition-all duration-200 hover:-translate-y-1 hover:brightness-90 hover:bg-[oklch(0.55_0.28_310/0.25)] active:translate-y-0"
               style={{
                 borderColor: "var(--neon-purple)",
                 boxShadow: "var(--glow-purple)",
