@@ -111,5 +111,140 @@ function Index() {
         </div>
       </div>
     </main>
+
+    <FeaturedProjects />
+    </>
   );
 }
+
+const projects = [
+  {
+    title: "StudyFlow",
+    description: "AI-платформа для персонализированного обучения. Адаптивные треки, авто-генерация заданий и аналитика прогресса.",
+    tags: ["React", "OpenAI", "Supabase", "Tailwind"],
+    accent: "lime" as const,
+    gradient: "linear-gradient(135deg, oklch(0.92 0.24 130 / 0.35), oklch(0.55 0.28 200 / 0.35))",
+  },
+  {
+    title: "НейроАналитик",
+    description: "AI-сервис для анализа данных. Загружаете датасет — получаете инсайты, графики и текстовые выводы за секунды.",
+    tags: ["Next.js", "Python", "LangChain", "Recharts"],
+    accent: "purple" as const,
+    gradient: "linear-gradient(135deg, oklch(0.68 0.28 310 / 0.4), oklch(0.45 0.28 260 / 0.4))",
+  },
+  {
+    title: "LaunchPro",
+    description: "Лендинг для SaaS-продукта: конверсионная структура, анимации и интеграция с CRM за 3 дня.",
+    tags: ["Vite", "Framer Motion", "TS", "Stripe"],
+    accent: "magenta" as const,
+    gradient: "linear-gradient(135deg, oklch(0.65 0.30 340 / 0.4), oklch(0.55 0.28 20 / 0.4))",
+  },
+];
+
+function FeaturedProjects() {
+  return (
+    <section id="projects" className="relative overflow-hidden bg-hero-gradient px-6 py-20 lg:px-10 lg:py-32">
+      <div
+        aria-hidden
+        className="pointer-events-none absolute left-1/2 top-0 h-[400px] w-[600px] -translate-x-1/2 rounded-full opacity-40 blur-3xl"
+        style={{ background: "radial-gradient(circle, oklch(0.55 0.28 340 / 0.5), transparent 70%)" }}
+      />
+
+      <div className="relative z-10 mx-auto w-full max-w-7xl">
+        <div className="mb-10 flex flex-col items-start justify-between gap-4 lg:mb-16 lg:flex-row lg:items-end">
+          <div>
+            <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-border bg-card/40 px-4 py-1.5 text-xs uppercase tracking-widest text-muted-foreground backdrop-blur-sm">
+              <Sparkle className="h-3 w-3 text-neon-lime" />
+              Портфолио
+            </div>
+            <h2 className="font-display text-3xl font-bold uppercase leading-[1.15] tracking-tight text-foreground sm:text-4xl lg:text-5xl">
+              Избранные{" "}
+              <span className="text-neon-lime" style={{ textShadow: "0 0 30px oklch(0.92 0.24 130 / 0.5)" }}>
+                проекты
+              </span>
+            </h2>
+          </div>
+          <p className="max-w-md text-base text-muted-foreground">
+            Кейсы, собранные через вайбкодинг: от идеи до продакшена за считанные дни.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 lg:gap-8">
+          {projects.map((p) => (
+            <ProjectCard key={p.title} project={p} />
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function ProjectCard({ project }: { project: (typeof projects)[number] }) {
+  const accentColor =
+    project.accent === "lime"
+      ? "var(--neon-lime)"
+      : project.accent === "purple"
+      ? "var(--neon-purple)"
+      : "var(--neon-magenta)";
+
+  return (
+    <article
+      className="group relative flex flex-col overflow-hidden rounded-3xl border border-border bg-card/40 backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-transparent"
+      style={{
+        boxShadow: `0 0 0 1px transparent`,
+      }}
+    >
+      {/* Preview */}
+      <div
+        className="relative aspect-[4/3] w-full overflow-hidden"
+        style={{ background: project.gradient }}
+      >
+        <div
+          aria-hidden
+          className="absolute inset-0 opacity-30"
+          style={{
+            backgroundImage:
+              "linear-gradient(oklch(1 0 0 / 0.08) 1px, transparent 1px), linear-gradient(90deg, oklch(1 0 0 / 0.08) 1px, transparent 1px)",
+            backgroundSize: "24px 24px",
+          }}
+        />
+        <div className="absolute inset-0 flex items-center justify-center">
+          <Sparkle
+            className="h-16 w-16 transition-transform duration-500 group-hover:scale-110 group-hover:rotate-12"
+            style={{ color: accentColor, filter: `drop-shadow(0 0 24px ${accentColor})` }}
+            aria-hidden
+          />
+        </div>
+        <div className="absolute right-4 top-4 flex h-10 w-10 items-center justify-center rounded-full bg-background/60 backdrop-blur-md transition-transform duration-300 group-hover:-translate-y-1 group-hover:translate-x-1">
+          <ArrowUpRight className="h-5 w-5 text-foreground" />
+        </div>
+      </div>
+
+      {/* Body */}
+      <div className="flex flex-1 flex-col gap-4 p-6">
+        <h3 className="font-display text-2xl font-bold uppercase tracking-tight text-foreground">
+          {project.title}
+        </h3>
+        <p className="text-base text-muted-foreground">{project.description}</p>
+        <ul className="mt-auto flex flex-wrap gap-2 pt-2">
+          {project.tags.map((tag) => (
+            <li
+              key={tag}
+              className="rounded-full border border-border bg-background/40 px-3 py-1 text-xs font-medium uppercase tracking-wider text-muted-foreground"
+            >
+              {tag}
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      {/* Accent border on hover */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0 rounded-3xl opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+        style={{ boxShadow: `0 0 0 1px ${accentColor}, 0 20px 60px -20px ${accentColor}` }}
+      />
+    </article>
+  );
+}
+
