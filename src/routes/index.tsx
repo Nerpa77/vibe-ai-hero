@@ -43,7 +43,7 @@ function Index() {
             AI · Vibecoding · MVP
           </div>
 
-          <h1 className="font-display text-4xl font-bold uppercase leading-[0.95] tracking-tight text-foreground sm:text-5xl lg:text-6xl xl:text-7xl">
+          <h1 className="font-display text-4xl font-bold uppercase leading-[1.15] tracking-tight text-foreground sm:text-5xl sm:leading-[1.15] lg:text-6xl lg:leading-[1.2] xl:text-7xl xl:leading-[1.2]">
             Создаю{" "}
             <span className="text-neon-lime" style={{ textShadow: "0 0 30px oklch(0.92 0.24 130 / 0.5)" }}>
               AI-продукты
