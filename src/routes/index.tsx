@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { ArrowDown, Sparkle } from "lucide-react";
+import { ArrowDown, Sparkle, ArrowUpRight } from "lucide-react";
+
 import heroVibe from "@/assets/hero-vibe.png";
 
 export const Route = createFileRoute("/")({
