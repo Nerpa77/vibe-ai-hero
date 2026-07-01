@@ -9,7 +9,9 @@ export const Route = createFileRoute("/")({
 
 function Index() {
   return (
+    <>
     <main className="relative flex min-h-[100dvh] flex-col overflow-hidden bg-hero-gradient lg:min-h-screen">
+
       {/* Ambient glow blobs */}
       <div
         aria-hidden
