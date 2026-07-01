@@ -145,39 +145,40 @@ const projects = [
 
 function FeaturedProjects() {
   return (
-    <section id="projects" className="relative overflow-hidden bg-hero-gradient px-6 py-20 lg:px-10 lg:py-32">
+    <section id="projects" className="relative flex min-h-[100dvh] flex-col overflow-hidden bg-hero-gradient px-5 py-8 lg:min-h-0 lg:px-10 lg:py-32">
       <div
         aria-hidden
         className="pointer-events-none absolute left-1/2 top-0 h-[400px] w-[600px] -translate-x-1/2 rounded-full opacity-40 blur-3xl"
         style={{ background: "radial-gradient(circle, oklch(0.55 0.28 340 / 0.5), transparent 70%)" }}
       />
 
-      <div className="relative z-10 mx-auto w-full max-w-7xl">
-        <div className="mb-10 flex flex-col items-start justify-between gap-4 lg:mb-16 lg:flex-row lg:items-end">
+      <div className="relative z-10 mx-auto flex w-full max-w-7xl flex-1 flex-col">
+        <div className="mb-5 flex flex-col items-start justify-between gap-3 lg:mb-16 lg:flex-row lg:items-end lg:gap-4">
           <div>
-            <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-border bg-card/40 px-4 py-1.5 text-xs uppercase tracking-widest text-muted-foreground backdrop-blur-sm">
+            <div className="mb-2 inline-flex items-center gap-2 rounded-full border border-border bg-card/40 px-3 py-1 text-[10px] uppercase tracking-widest text-muted-foreground backdrop-blur-sm lg:mb-4 lg:px-4 lg:py-1.5 lg:text-xs">
               <Sparkle className="h-3 w-3 text-neon-lime" />
               Портфолио
             </div>
-            <h2 className="font-display text-3xl font-bold uppercase leading-[1.15] tracking-tight text-foreground sm:text-4xl lg:text-5xl">
+            <h2 className="font-display text-2xl font-bold uppercase leading-[1.15] tracking-tight text-foreground sm:text-4xl lg:text-5xl">
               Избранные{" "}
               <span className="text-neon-lime" style={{ textShadow: "0 0 30px oklch(0.92 0.24 130 / 0.5)" }}>
                 проекты
               </span>
             </h2>
           </div>
-          <p className="max-w-md text-base text-muted-foreground">
+          <p className="hidden max-w-md text-base text-muted-foreground lg:block">
             Кейсы, собранные через вайбкодинг: от идеи до продакшена за считанные дни.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 lg:gap-8">
+        <div className="grid flex-1 grid-cols-1 gap-3 md:grid-cols-2 lg:grid-cols-3 lg:gap-8">
           {projects.map((p) => (
             <ProjectCard key={p.title} project={p} />
           ))}
         </div>
       </div>
     </section>
+
   );
 }
 
