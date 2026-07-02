@@ -201,7 +201,7 @@ function ProjectCard({ project }: { project: (typeof projects)[number] }) {
 
   return (
     <article
-      className="group relative flex flex-row overflow-hidden rounded-2xl border border-border bg-card/40 backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-transparent lg:flex-col lg:rounded-3xl"
+      className="group relative flex flex-row overflow-hidden rounded-2xl border border-[oklch(0.14_0.03_300/0.1)] bg-white transition-all duration-300 hover:-translate-y-1 hover:border-transparent lg:flex-col lg:rounded-3xl"
     >
       {/* Preview */}
       <div
@@ -222,30 +222,31 @@ function ProjectCard({ project }: { project: (typeof projects)[number] }) {
           style={{ background: `linear-gradient(180deg, transparent 40%, oklch(0.15 0.05 280 / 0.6) 100%), ${project.gradient}`, mixBlendMode: "overlay" }}
         />
 
-        <div className="absolute right-2 top-2 hidden h-10 w-10 items-center justify-center rounded-full bg-background/60 backdrop-blur-md transition-transform duration-300 group-hover:-translate-y-1 group-hover:translate-x-1 lg:flex lg:right-4 lg:top-4">
-          <ArrowUpRight className="h-5 w-5 text-foreground" />
+        <div className="absolute right-2 top-2 hidden h-10 w-10 items-center justify-center rounded-full bg-white/80 backdrop-blur-md transition-transform duration-300 group-hover:-translate-y-1 group-hover:translate-x-1 lg:flex lg:right-4 lg:top-4">
+          <ArrowUpRight className="h-5 w-5 text-[oklch(0.14_0.03_300)]" />
         </div>
       </div>
 
       {/* Body */}
       <div className="flex flex-1 flex-col gap-1.5 p-3 lg:gap-4 lg:p-6">
-        <h3 className="font-display text-base font-bold uppercase tracking-tight text-foreground lg:text-2xl">
+        <h3 className="font-display text-base font-bold uppercase tracking-tight text-[oklch(0.14_0.03_300)] lg:text-2xl">
           {project.title}
         </h3>
-        <p className="line-clamp-2 text-xs text-muted-foreground lg:line-clamp-none lg:text-base">
+        <p className="line-clamp-2 text-xs text-[oklch(0.45_0.03_300)] lg:line-clamp-none lg:text-base">
           {project.description}
         </p>
         <ul className="mt-auto flex flex-wrap gap-1 pt-1 lg:gap-2 lg:pt-2">
           {project.tags.map((tag) => (
             <li
               key={tag}
-              className="rounded-full border border-border bg-background/40 px-2 py-0.5 text-[10px] font-medium uppercase tracking-wider text-muted-foreground lg:px-3 lg:py-1 lg:text-xs"
+              className="rounded-full border border-[oklch(0.14_0.03_300/0.1)] bg-[oklch(0.96_0.005_300)] px-2 py-0.5 text-[10px] font-medium uppercase tracking-wider text-[oklch(0.35_0.03_300)] lg:px-3 lg:py-1 lg:text-xs"
             >
               {tag}
             </li>
           ))}
         </ul>
       </div>
+
 
       {/* Accent border on hover */}
       <div
