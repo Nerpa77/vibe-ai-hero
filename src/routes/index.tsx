@@ -84,8 +84,8 @@ function Index() {
         </div>
 
         {/* Right column — visual */}
-        <div className="relative order-2 flex min-h-0 flex-1 items-center justify-center lg:order-2 lg:flex-none">
-          <div className="relative aspect-square w-full max-w-[160px] sm:max-w-[280px] lg:max-w-[560px]">
+        <div className="relative order-2 flex min-h-0 flex-1 items-center justify-center px-6 lg:order-2 lg:flex-none lg:px-0">
+          <div className="relative aspect-square w-full max-w-[120px] sm:max-w-[240px] md:max-w-[300px] lg:max-w-[560px]">
             <img
               src={heroVibe}
               alt="3D неоновая звезда с курсором — символ вайбкодинга"
@@ -96,12 +96,12 @@ function Index() {
             />
             {/* Decorative mini stars */}
             <Sparkle
-              className="animate-float-slow absolute left-0 top-4 h-6 w-6 text-neon-purple lg:top-10 lg:h-10 lg:w-10"
+              className="animate-float-slow absolute left-1 top-2 h-4 w-4 text-neon-purple sm:left-0 sm:top-4 sm:h-6 sm:w-6 lg:top-10 lg:h-10 lg:w-10"
               style={{ animationDelay: "1s", filter: "drop-shadow(0 0 12px oklch(0.68 0.28 310))" }}
               aria-hidden
             />
             <Sparkle
-              className="animate-float-slow absolute -bottom-2 right-2 h-5 w-5 text-neon-magenta lg:right-6 lg:h-8 lg:w-8"
+              className="animate-float-slow absolute bottom-1 right-1 h-4 w-4 text-neon-magenta sm:bottom-0 sm:right-2 sm:h-5 sm:w-5 lg:right-6 lg:h-8 lg:w-8"
               style={{ animationDelay: "2s", filter: "drop-shadow(0 0 12px oklch(0.65 0.30 340))" }}
               aria-hidden
             />
