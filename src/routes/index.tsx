@@ -153,30 +153,31 @@ const projects = [
 
 function FeaturedProjects() {
   return (
-    <section id="projects" className="relative flex min-h-[100dvh] flex-col overflow-hidden bg-hero-gradient px-5 py-8 lg:min-h-0 lg:px-10 lg:py-32">
-      <div
-        aria-hidden
-        className="pointer-events-none absolute left-1/2 top-0 h-[400px] w-[600px] -translate-x-1/2 rounded-full opacity-40 blur-3xl"
-        style={{ background: "radial-gradient(circle, oklch(0.55 0.28 340 / 0.5), transparent 70%)" }}
-      />
-
+    <section id="projects" className="relative flex min-h-[100dvh] flex-col overflow-hidden bg-[oklch(0.98_0.005_300)] px-5 py-8 lg:min-h-0 lg:px-10 lg:py-32">
       <div className="relative z-10 mx-auto flex w-full max-w-7xl flex-1 flex-col">
-        <div className="mb-5 flex flex-col items-start justify-between gap-3 lg:mb-16 lg:flex-row lg:items-end lg:gap-4">
-          <div>
-            <div className="mb-2 inline-flex items-center gap-2 rounded-full border border-border bg-card/40 px-3 py-1 text-[10px] uppercase tracking-widest text-muted-foreground backdrop-blur-sm lg:mb-4 lg:px-4 lg:py-1.5 lg:text-xs">
+        <div className="mb-5 flex flex-row items-start justify-between gap-3 lg:mb-16 lg:items-end lg:gap-4">
+          <div className="min-w-0 flex-1">
+            <div className="mb-2 inline-flex items-center gap-2 rounded-full border border-[oklch(0.14_0.03_300/0.12)] bg-white px-3 py-1 text-[10px] uppercase tracking-widest text-[oklch(0.45_0.03_300)] lg:mb-4 lg:px-4 lg:py-1.5 lg:text-xs">
               <Sparkle className="h-3 w-3 text-neon-lime" />
               Портфолио
             </div>
-            <h2 className="font-display text-2xl font-bold uppercase leading-[1.15] tracking-tight text-foreground sm:text-4xl lg:text-5xl">
+            <h2 className="font-display text-2xl font-bold uppercase leading-[1.15] tracking-tight text-[oklch(0.14_0.03_300)] sm:text-4xl lg:text-5xl">
               Избранные{" "}
-              <span className="text-neon-lime" style={{ textShadow: "0 0 30px oklch(0.92 0.24 130 / 0.5)" }}>
+              <span className="text-neon-lime" style={{ WebkitTextStroke: "1px oklch(0.55 0.20 130)" }}>
                 проекты
               </span>
             </h2>
+            <p className="mt-3 hidden max-w-md text-base text-[oklch(0.45_0.03_300)] lg:block">
+              Кейсы, собранные через вайбкодинг: от идеи до продакшена за считанные дни.
+            </p>
           </div>
-          <p className="hidden max-w-md text-base text-muted-foreground lg:block">
-            Кейсы, собранные через вайбкодинг: от идеи до продакшена за считанные дни.
-          </p>
+          <a
+            href="#projects"
+            className="group inline-flex shrink-0 items-center gap-1 pt-1 text-xs text-[oklch(0.14_0.03_300)] underline-offset-4 transition-colors hover:underline lg:pt-0 lg:text-sm"
+          >
+            Посмотреть все проекты
+            <ArrowUpRight className="h-3.5 w-3.5 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5 lg:h-4 lg:w-4" />
+          </a>
         </div>
 
         <div className="grid flex-1 grid-cols-1 gap-3 lg:grid-cols-3 lg:gap-8">
@@ -200,7 +201,7 @@ function ProjectCard({ project }: { project: (typeof projects)[number] }) {
 
   return (
     <article
-      className="group relative flex flex-row overflow-hidden rounded-2xl border border-border bg-card/40 backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-transparent lg:flex-col lg:rounded-3xl"
+      className="group relative flex flex-row overflow-hidden rounded-2xl border border-[oklch(0.14_0.03_300/0.1)] bg-white transition-all duration-300 hover:-translate-y-1 hover:border-transparent lg:flex-col lg:rounded-3xl"
     >
       {/* Preview */}
       <div
@@ -221,30 +222,31 @@ function ProjectCard({ project }: { project: (typeof projects)[number] }) {
           style={{ background: `linear-gradient(180deg, transparent 40%, oklch(0.15 0.05 280 / 0.6) 100%), ${project.gradient}`, mixBlendMode: "overlay" }}
         />
 
-        <div className="absolute right-2 top-2 hidden h-10 w-10 items-center justify-center rounded-full bg-background/60 backdrop-blur-md transition-transform duration-300 group-hover:-translate-y-1 group-hover:translate-x-1 lg:flex lg:right-4 lg:top-4">
-          <ArrowUpRight className="h-5 w-5 text-foreground" />
+        <div className="absolute right-2 top-2 hidden h-10 w-10 items-center justify-center rounded-full bg-white/80 backdrop-blur-md transition-transform duration-300 group-hover:-translate-y-1 group-hover:translate-x-1 lg:flex lg:right-4 lg:top-4">
+          <ArrowUpRight className="h-5 w-5 text-[oklch(0.14_0.03_300)]" />
         </div>
       </div>
 
       {/* Body */}
       <div className="flex flex-1 flex-col gap-1.5 p-3 lg:gap-4 lg:p-6">
-        <h3 className="font-display text-base font-bold uppercase tracking-tight text-foreground lg:text-2xl">
+        <h3 className="font-display text-base font-bold uppercase tracking-tight text-[oklch(0.14_0.03_300)] lg:text-2xl">
           {project.title}
         </h3>
-        <p className="line-clamp-2 text-xs text-muted-foreground lg:line-clamp-none lg:text-base">
+        <p className="line-clamp-2 text-xs text-[oklch(0.45_0.03_300)] lg:line-clamp-none lg:text-base">
           {project.description}
         </p>
         <ul className="mt-auto flex flex-wrap gap-1 pt-1 lg:gap-2 lg:pt-2">
           {project.tags.map((tag) => (
             <li
               key={tag}
-              className="rounded-full border border-border bg-background/40 px-2 py-0.5 text-[10px] font-medium uppercase tracking-wider text-muted-foreground lg:px-3 lg:py-1 lg:text-xs"
+              className="rounded-full border border-[oklch(0.14_0.03_300/0.1)] bg-[oklch(0.96_0.005_300)] px-2 py-0.5 text-[10px] font-medium uppercase tracking-wider text-[oklch(0.35_0.03_300)] lg:px-3 lg:py-1 lg:text-xs"
             >
               {tag}
             </li>
           ))}
         </ul>
       </div>
+
 
       {/* Accent border on hover */}
       <div
