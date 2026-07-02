@@ -205,7 +205,7 @@ function ProjectCard({ project }: { project: (typeof projects)[number] }) {
     >
       {/* Preview */}
       <div
-        className="relative aspect-square w-28 shrink-0 overflow-hidden lg:aspect-[4/3] lg:w-full"
+        className="relative aspect-square w-28 shrink-0 overflow-hidden sm:w-44 md:w-56 lg:aspect-[4/3] lg:w-full"
         style={{ background: project.gradient }}
       >
         <img
