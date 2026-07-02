@@ -153,30 +153,31 @@ const projects = [
 
 function FeaturedProjects() {
   return (
-    <section id="projects" className="relative flex min-h-[100dvh] flex-col overflow-hidden bg-hero-gradient px-5 py-8 lg:min-h-0 lg:px-10 lg:py-32">
-      <div
-        aria-hidden
-        className="pointer-events-none absolute left-1/2 top-0 h-[400px] w-[600px] -translate-x-1/2 rounded-full opacity-40 blur-3xl"
-        style={{ background: "radial-gradient(circle, oklch(0.55 0.28 340 / 0.5), transparent 70%)" }}
-      />
-
+    <section id="projects" className="relative flex min-h-[100dvh] flex-col overflow-hidden bg-[oklch(0.98_0.005_300)] px-5 py-8 lg:min-h-0 lg:px-10 lg:py-32">
       <div className="relative z-10 mx-auto flex w-full max-w-7xl flex-1 flex-col">
-        <div className="mb-5 flex flex-col items-start justify-between gap-3 lg:mb-16 lg:flex-row lg:items-end lg:gap-4">
-          <div>
-            <div className="mb-2 inline-flex items-center gap-2 rounded-full border border-border bg-card/40 px-3 py-1 text-[10px] uppercase tracking-widest text-muted-foreground backdrop-blur-sm lg:mb-4 lg:px-4 lg:py-1.5 lg:text-xs">
+        <div className="mb-5 flex flex-row items-start justify-between gap-3 lg:mb-16 lg:items-end lg:gap-4">
+          <div className="min-w-0 flex-1">
+            <div className="mb-2 inline-flex items-center gap-2 rounded-full border border-[oklch(0.14_0.03_300/0.12)] bg-white px-3 py-1 text-[10px] uppercase tracking-widest text-[oklch(0.45_0.03_300)] lg:mb-4 lg:px-4 lg:py-1.5 lg:text-xs">
               <Sparkle className="h-3 w-3 text-neon-lime" />
               Портфолио
             </div>
-            <h2 className="font-display text-2xl font-bold uppercase leading-[1.15] tracking-tight text-foreground sm:text-4xl lg:text-5xl">
+            <h2 className="font-display text-2xl font-bold uppercase leading-[1.15] tracking-tight text-[oklch(0.14_0.03_300)] sm:text-4xl lg:text-5xl">
               Избранные{" "}
-              <span className="text-neon-lime" style={{ textShadow: "0 0 30px oklch(0.92 0.24 130 / 0.5)" }}>
+              <span className="text-neon-lime" style={{ WebkitTextStroke: "1px oklch(0.55 0.20 130)" }}>
                 проекты
               </span>
             </h2>
+            <p className="mt-3 hidden max-w-md text-base text-[oklch(0.45_0.03_300)] lg:block">
+              Кейсы, собранные через вайбкодинг: от идеи до продакшена за считанные дни.
+            </p>
           </div>
-          <p className="hidden max-w-md text-base text-muted-foreground lg:block">
-            Кейсы, собранные через вайбкодинг: от идеи до продакшена за считанные дни.
-          </p>
+          <a
+            href="#projects"
+            className="group inline-flex shrink-0 items-center gap-1 pt-1 text-xs text-[oklch(0.14_0.03_300)] underline-offset-4 transition-colors hover:underline lg:pt-0 lg:text-sm"
+          >
+            Посмотреть все проекты
+            <ArrowUpRight className="h-3.5 w-3.5 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5 lg:h-4 lg:w-4" />
+          </a>
         </div>
 
         <div className="grid flex-1 grid-cols-1 gap-3 lg:grid-cols-3 lg:gap-8">
