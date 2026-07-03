@@ -205,7 +205,7 @@ function ProjectCard({ project }: { project: (typeof projects)[number] }) {
     >
       {/* Preview */}
       <div
-        className="relative aspect-square w-28 shrink-0 overflow-hidden sm:w-44 md:w-56 lg:aspect-[4/3] lg:w-full"
+        className="relative w-32 shrink-0 self-stretch overflow-hidden sm:w-44 md:w-56 lg:aspect-[4/3] lg:w-full"
         style={{ background: project.gradient }}
       >
         <img
@@ -214,8 +214,9 @@ function ProjectCard({ project }: { project: (typeof projects)[number] }) {
           width={1024}
           height={768}
           loading="lazy"
-          className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+          className="absolute inset-0 h-full w-full object-contain transition-transform duration-500 group-hover:scale-105 lg:object-cover"
         />
+
         <div
           aria-hidden
           className="absolute inset-0"
@@ -232,9 +233,10 @@ function ProjectCard({ project }: { project: (typeof projects)[number] }) {
         <h3 className="font-display text-base font-bold uppercase tracking-tight text-[oklch(0.14_0.03_300)] lg:text-2xl">
           {project.title}
         </h3>
-        <p className="line-clamp-2 text-xs text-[oklch(0.45_0.03_300)] lg:line-clamp-none lg:text-base">
+        <p className="text-xs text-[oklch(0.45_0.03_300)] lg:text-base">
           {project.description}
         </p>
+
         <ul className="mt-auto flex flex-wrap gap-1 pt-1 lg:gap-2 lg:pt-2">
           {project.tags.map((tag) => (
             <li
