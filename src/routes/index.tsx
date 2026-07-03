@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { ArrowDown, Sparkle, ArrowUpRight } from "lucide-react";
+import { ArrowDown, Sparkle, ArrowUpRight, Rocket, Bot, Palette, Plug } from "lucide-react";
+
 
 import heroVibe from "@/assets/hero-vibe.png";
 import projectStudyflow from "@/assets/project-studyflow.jpg";
@@ -118,6 +119,7 @@ function Index() {
       </div>
     </main>
 
+    <WhatIDo />
     <FeaturedProjects />
     </>
   );
@@ -260,4 +262,127 @@ function ProjectCard({ project }: { project: (typeof projects)[number] }) {
   );
 
 }
+
+const services = [
+  {
+    icon: Rocket,
+    emoji: "🚀",
+    title: "MVP за неделю",
+    description:
+      "Собираю рабочий прототип продукта с нуля через вайбкодинг. От идеи и UX до задеплоенной версии за 5–7 дней.",
+    result: "Готовый MVP → первые пользователи",
+    accent: "lime" as const,
+  },
+  {
+    icon: Bot,
+    emoji: "🤖",
+    title: "AI-автоматизация",
+    description:
+      "Внедряю LLM и AI-агентов в продукт и внутренние процессы. Чат-боты, генерация контента, обработка данных и документов.",
+    result: "−70% рутины в команде",
+    accent: "purple" as const,
+  },
+  {
+    icon: Palette,
+    emoji: "🎨",
+    title: "UI/UX с вайбкодингом",
+    description:
+      "Проектирую и сразу собираю интерфейс в коде. Быстрые итерации по дизайну без разрыва между Figma и продакшеном.",
+    result: "Дизайн-система + живой UI",
+    accent: "magenta" as const,
+  },
+  {
+    icon: Plug,
+    emoji: "🔌",
+    title: "Интеграции",
+    description:
+      "Подключаю внешние API, платежи, CRM, аналитику и Supabase. Настраиваю вебхуки и синхронизацию данных между системами.",
+    result: "Единый рабочий контур",
+    accent: "lime" as const,
+  },
+];
+
+function WhatIDo() {
+  return (
+    <section id="services" className="relative overflow-hidden bg-hero-gradient px-5 py-14 lg:px-10 lg:py-32">
+      <div
+        aria-hidden
+        className="pointer-events-none absolute -top-24 left-1/2 h-[420px] w-[420px] -translate-x-1/2 rounded-full opacity-40 blur-3xl"
+        style={{ background: "radial-gradient(circle, oklch(0.55 0.28 340 / 0.5), transparent 70%)" }}
+      />
+
+      <div className="relative z-10 mx-auto w-full max-w-7xl">
+        <div className="mb-8 max-w-2xl lg:mb-16">
+          <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-border bg-card/40 px-3 py-1 text-[10px] uppercase tracking-widest text-muted-foreground backdrop-blur-sm lg:mb-4 lg:px-4 lg:py-1.5 lg:text-xs">
+            <Sparkle className="h-3 w-3 text-neon-lime" />
+            Услуги
+          </div>
+          <h2 className="font-display text-2xl font-bold uppercase leading-[1.15] tracking-tight text-foreground sm:text-4xl lg:text-5xl">
+            Что я{" "}
+            <span className="text-neon-lime" style={{ textShadow: "0 0 30px oklch(0.92 0.24 130 / 0.5)" }}>
+              делаю
+            </span>
+          </h2>
+          <p className="mt-3 text-base text-muted-foreground lg:mt-5 lg:text-lg">
+            Помогаю превращать идеи в живые AI-продукты — быстро, без раздутых команд и бесконечных спринтов.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:gap-6">
+          {services.map((s) => (
+            <ServiceCard key={s.title} service={s} />
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function ServiceCard({ service }: { service: (typeof services)[number] }) {
+  const accentColor =
+    service.accent === "lime"
+      ? "var(--neon-lime)"
+      : service.accent === "purple"
+      ? "var(--neon-purple)"
+      : "var(--neon-magenta)";
+
+  const Icon = service.icon;
+
+  return (
+    <article
+      className="group relative flex flex-col gap-3 overflow-hidden rounded-2xl border border-border bg-card/40 p-4 backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-transparent lg:gap-5 lg:rounded-3xl lg:p-7"
+    >
+      <div
+        className="flex h-11 w-11 items-center justify-center rounded-xl border border-border bg-background/60 text-xl lg:h-14 lg:w-14 lg:text-2xl"
+        style={{ boxShadow: `0 0 24px -8px ${accentColor}` }}
+        aria-hidden
+      >
+        <Icon className="h-5 w-5 lg:h-6 lg:w-6" style={{ color: accentColor }} />
+      </div>
+
+      <h3 className="font-display text-lg font-bold uppercase tracking-tight text-foreground lg:text-2xl">
+        {service.title}
+      </h3>
+
+      <p className="text-sm text-muted-foreground lg:text-base">
+        {service.description}
+      </p>
+
+      <div
+        className="mt-1 inline-flex w-fit items-center gap-2 rounded-full border px-3 py-1 text-xs font-medium uppercase tracking-wider lg:text-[13px]"
+        style={{ borderColor: accentColor, color: accentColor, background: `color-mix(in oklab, ${accentColor} 10%, transparent)` }}
+      >
+        <Sparkle className="h-3 w-3" />
+        {service.result}
+      </div>
+
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0 rounded-2xl opacity-0 transition-opacity duration-300 group-hover:opacity-100 lg:rounded-3xl"
+        style={{ boxShadow: `0 0 0 1px ${accentColor}, 0 20px 60px -20px ${accentColor}` }}
+      />
+    </article>
+  );
+}
+
 
