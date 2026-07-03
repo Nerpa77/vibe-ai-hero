@@ -119,6 +119,7 @@ function Index() {
       </div>
     </main>
 
+    <WhatIDo />
     <FeaturedProjects />
     </>
   );
