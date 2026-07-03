@@ -205,7 +205,7 @@ function ProjectCard({ project }: { project: (typeof projects)[number] }) {
     >
       {/* Preview */}
       <div
-        className="relative aspect-square w-28 shrink-0 overflow-hidden sm:w-44 md:w-56 lg:aspect-[4/3] lg:w-full"
+        className="relative w-32 shrink-0 self-stretch overflow-hidden sm:w-44 md:w-56 lg:aspect-[4/3] lg:w-full"
         style={{ background: project.gradient }}
       >
         <img
@@ -214,8 +214,9 @@ function ProjectCard({ project }: { project: (typeof projects)[number] }) {
           width={1024}
           height={768}
           loading="lazy"
-          className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+          className="absolute inset-0 h-full w-full object-contain transition-transform duration-500 group-hover:scale-105 lg:object-cover"
         />
+
         <div
           aria-hidden
           className="absolute inset-0"
