@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { ArrowDown, Sparkle, ArrowUpRight, Rocket, Bot, Palette, Plug } from "lucide-react";
+import { ArrowDown, Sparkle, ArrowUpRight, Rocket, Bot, Palette, Plug, Search, Sparkles, TestTube2, TrendingUp } from "lucide-react";
 
 
 import heroVibe from "@/assets/hero-vibe.png";
@@ -390,21 +390,25 @@ const steps = [
   {
     title: "Погружаюсь в задачу",
     description: "Изучаю продукт, аудиторию и цели. Формирую понятную структуру и логику будущего решения.",
+    icon: Search,
     accent: "lime" as const,
   },
   {
     title: "Создаю с ИИ",
     description: "Собираю интерфейс и логику через вайбкодинг. Быстрые итерации, живой прототип уже через пару дней.",
+    icon: Sparkles,
     accent: "purple" as const,
   },
   {
     title: "Тестирую и улучшаю",
     description: "Проверяю сценарии, правлю UX и производительность. Собираю обратную связь и докручиваю детали.",
+    icon: TestTube2,
     accent: "magenta" as const,
   },
   {
     title: "Запускаю и масштабирую",
     description: "Деплою продукт, подключаю аналитику и интеграции. Помогаю развивать и добавлять новые фичи.",
+    icon: TrendingUp,
     accent: "lime" as const,
   },
 ];
@@ -479,6 +483,7 @@ function StepItem({
       : "var(--neon-magenta)";
 
   const number = String(index + 1).padStart(2, "0");
+  const Icon = step.icon;
 
   if (horizontal) {
     return (
@@ -493,7 +498,14 @@ function StepItem({
         >
           {number}
         </div>
-        <h3 className="mt-6 font-display text-lg font-bold uppercase tracking-tight text-[oklch(0.14_0.03_300)] xl:text-xl">
+        <div
+          className="mt-6 flex h-11 w-11 items-center justify-center rounded-xl border bg-white"
+          style={{ borderColor: `color-mix(in oklab, ${accentColor} 30%, transparent)`, boxShadow: `0 0 20px -8px ${accentColor}` }}
+          aria-hidden
+        >
+          <Icon className="h-5 w-5" style={{ color: accentColor }} />
+        </div>
+        <h3 className="mt-4 font-display text-lg font-bold uppercase tracking-tight text-[oklch(0.14_0.03_300)] xl:text-xl">
           {step.title}
         </h3>
         <p className="mt-2 text-sm text-[oklch(0.45_0.03_300)]">{step.description}</p>
@@ -514,9 +526,18 @@ function StepItem({
         {number}
       </div>
       <div className="min-w-0 flex-1 pt-1">
-        <h3 className="font-display text-base font-bold uppercase tracking-tight text-[oklch(0.14_0.03_300)]">
-          {step.title}
-        </h3>
+        <div className="flex items-center gap-2">
+          <div
+            className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg border bg-white"
+            style={{ borderColor: `color-mix(in oklab, ${accentColor} 30%, transparent)`, boxShadow: `0 0 16px -8px ${accentColor}` }}
+            aria-hidden
+          >
+            <Icon className="h-4 w-4" style={{ color: accentColor }} />
+          </div>
+          <h3 className="font-display text-base font-bold uppercase tracking-tight text-[oklch(0.14_0.03_300)]">
+            {step.title}
+          </h3>
+        </div>
         <p className="mt-1.5 text-sm text-[oklch(0.45_0.03_300)]">{step.description}</p>
       </div>
     </li>
