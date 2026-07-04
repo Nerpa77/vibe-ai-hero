@@ -120,6 +120,7 @@ function Index() {
     </main>
 
     <WhatIDo />
+    <HowIWork />
     <FeaturedProjects />
     </>
   );
