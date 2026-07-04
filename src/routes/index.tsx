@@ -483,6 +483,7 @@ function StepItem({
       : "var(--neon-magenta)";
 
   const number = String(index + 1).padStart(2, "0");
+  const Icon = step.icon;
 
   if (horizontal) {
     return (
@@ -497,7 +498,14 @@ function StepItem({
         >
           {number}
         </div>
-        <h3 className="mt-6 font-display text-lg font-bold uppercase tracking-tight text-[oklch(0.14_0.03_300)] xl:text-xl">
+        <div
+          className="mt-6 flex h-11 w-11 items-center justify-center rounded-xl border bg-white"
+          style={{ borderColor: `color-mix(in oklab, ${accentColor} 30%, transparent)`, boxShadow: `0 0 20px -8px ${accentColor}` }}
+          aria-hidden
+        >
+          <Icon className="h-5 w-5" style={{ color: accentColor }} />
+        </div>
+        <h3 className="mt-4 font-display text-lg font-bold uppercase tracking-tight text-[oklch(0.14_0.03_300)] xl:text-xl">
           {step.title}
         </h3>
         <p className="mt-2 text-sm text-[oklch(0.45_0.03_300)]">{step.description}</p>
@@ -518,9 +526,18 @@ function StepItem({
         {number}
       </div>
       <div className="min-w-0 flex-1 pt-1">
-        <h3 className="font-display text-base font-bold uppercase tracking-tight text-[oklch(0.14_0.03_300)]">
-          {step.title}
-        </h3>
+        <div className="flex items-center gap-2">
+          <div
+            className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg border bg-white"
+            style={{ borderColor: `color-mix(in oklab, ${accentColor} 30%, transparent)`, boxShadow: `0 0 16px -8px ${accentColor}` }}
+            aria-hidden
+          >
+            <Icon className="h-4 w-4" style={{ color: accentColor }} />
+          </div>
+          <h3 className="font-display text-base font-bold uppercase tracking-tight text-[oklch(0.14_0.03_300)]">
+            {step.title}
+          </h3>
+        </div>
         <p className="mt-1.5 text-sm text-[oklch(0.45_0.03_300)]">{step.description}</p>
       </div>
     </li>
