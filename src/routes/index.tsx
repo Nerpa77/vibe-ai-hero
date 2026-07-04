@@ -386,4 +386,142 @@ function ServiceCard({ service }: { service: (typeof services)[number] }) {
   );
 }
 
+const steps = [
+  {
+    title: "Погружаюсь в задачу",
+    description: "Изучаю продукт, аудиторию и цели. Формирую понятную структуру и логику будущего решения.",
+    accent: "lime" as const,
+  },
+  {
+    title: "Создаю с ИИ",
+    description: "Собираю интерфейс и логику через вайбкодинг. Быстрые итерации, живой прототип уже через пару дней.",
+    accent: "purple" as const,
+  },
+  {
+    title: "Тестирую и улучшаю",
+    description: "Проверяю сценарии, правлю UX и производительность. Собираю обратную связь и докручиваю детали.",
+    accent: "magenta" as const,
+  },
+  {
+    title: "Запускаю и масштабирую",
+    description: "Деплою продукт, подключаю аналитику и интеграции. Помогаю развивать и добавлять новые фичи.",
+    accent: "lime" as const,
+  },
+];
+
+function HowIWork() {
+  return (
+    <section
+      id="process"
+      className="relative overflow-hidden bg-[oklch(0.98_0.005_300)] px-5 py-14 lg:px-10 lg:py-32"
+    >
+      <div className="relative z-10 mx-auto w-full max-w-7xl">
+        <div className="mb-8 max-w-2xl lg:mb-16">
+          <div className="mb-2 inline-flex items-center gap-2 rounded-full border border-[oklch(0.14_0.03_300/0.12)] bg-white px-3 py-1 text-[10px] uppercase tracking-widest text-[oklch(0.45_0.03_300)] lg:mb-4 lg:px-4 lg:py-1.5 lg:text-xs">
+            <Sparkle className="h-3 w-3 text-neon-lime" />
+            Процесс
+          </div>
+          <h2 className="font-display text-2xl font-bold uppercase leading-[1.15] tracking-tight text-[oklch(0.14_0.03_300)] sm:text-4xl lg:text-5xl">
+            Как я{" "}
+            <span className="text-neon-lime" style={{ WebkitTextStroke: "1px oklch(0.55 0.20 130)" }}>
+              работаю
+            </span>
+          </h2>
+          <p className="mt-3 text-base text-[oklch(0.45_0.03_300)] lg:mt-5 lg:text-lg">
+            Прозрачный процесс от идеи до запуска — вы всегда видите, на каком этапе проект.
+          </p>
+        </div>
+
+        {/* Desktop: horizontal timeline */}
+        <div className="relative hidden lg:block">
+          <div
+            aria-hidden
+            className="absolute left-0 right-0 top-9 h-px bg-[oklch(0.14_0.03_300/0.15)]"
+          />
+          <div className="relative grid grid-cols-4 gap-8">
+            {steps.map((step, i) => (
+              <StepItem key={step.title} step={step} index={i} horizontal />
+            ))}
+          </div>
+        </div>
+
+        {/* Mobile: vertical timeline */}
+        <div className="relative lg:hidden">
+          <div
+            aria-hidden
+            className="absolute bottom-4 left-6 top-4 w-px bg-[oklch(0.14_0.03_300/0.15)]"
+          />
+          <ol className="relative flex flex-col gap-6">
+            {steps.map((step, i) => (
+              <StepItem key={step.title} step={step} index={i} />
+            ))}
+          </ol>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function StepItem({
+  step,
+  index,
+  horizontal = false,
+}: {
+  step: (typeof steps)[number];
+  index: number;
+  horizontal?: boolean;
+}) {
+  const accentColor =
+    step.accent === "lime"
+      ? "var(--neon-lime)"
+      : step.accent === "purple"
+      ? "var(--neon-purple)"
+      : "var(--neon-magenta)";
+
+  const number = String(index + 1).padStart(2, "0");
+
+  if (horizontal) {
+    return (
+      <div className="relative flex flex-col items-start">
+        <div
+          className="relative z-10 flex h-[72px] w-[72px] items-center justify-center rounded-full border-2 bg-white font-display text-2xl font-bold"
+          style={{
+            borderColor: accentColor,
+            color: accentColor,
+            boxShadow: `0 0 0 6px oklch(0.98 0.005 300), 0 12px 32px -12px ${accentColor}`,
+          }}
+        >
+          {number}
+        </div>
+        <h3 className="mt-6 font-display text-lg font-bold uppercase tracking-tight text-[oklch(0.14_0.03_300)] xl:text-xl">
+          {step.title}
+        </h3>
+        <p className="mt-2 text-sm text-[oklch(0.45_0.03_300)]">{step.description}</p>
+      </div>
+    );
+  }
+
+  return (
+    <li className="relative flex items-start gap-4 pl-0">
+      <div
+        className="relative z-10 flex h-12 w-12 shrink-0 items-center justify-center rounded-full border-2 bg-white font-display text-base font-bold"
+        style={{
+          borderColor: accentColor,
+          color: accentColor,
+          boxShadow: `0 0 0 4px oklch(0.98 0.005 300), 0 8px 20px -8px ${accentColor}`,
+        }}
+      >
+        {number}
+      </div>
+      <div className="min-w-0 flex-1 pt-1">
+        <h3 className="font-display text-base font-bold uppercase tracking-tight text-[oklch(0.14_0.03_300)]">
+          {step.title}
+        </h3>
+        <p className="mt-1.5 text-sm text-[oklch(0.45_0.03_300)]">{step.description}</p>
+      </div>
+    </li>
+  );
+}
+
+
 
