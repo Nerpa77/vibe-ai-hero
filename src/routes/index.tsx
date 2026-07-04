@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { ArrowDown, Sparkle, ArrowUpRight, Rocket, Bot, Palette, Plug } from "lucide-react";
+import { ArrowDown, Sparkle, ArrowUpRight, Rocket, Bot, Palette, Plug, Search, Sparkles, TestTube2, TrendingUp } from "lucide-react";
 
 
 import heroVibe from "@/assets/hero-vibe.png";
