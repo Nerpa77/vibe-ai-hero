@@ -129,14 +129,16 @@ function Index() {
 
 function CtaContact() {
   return (
-    <section id="contact" className="relative overflow-hidden bg-[oklch(0.14_0.03_300)] px-5 py-20 lg:px-10 lg:py-32">
+    <section id="contact" className="relative overflow-hidden bg-hero-gradient px-5 py-20 lg:px-10 lg:py-32">
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-0 opacity-60"
-        style={{
-          background:
-            "radial-gradient(600px circle at 20% 30%, oklch(0.92 0.24 130 / 0.18), transparent 60%), radial-gradient(500px circle at 80% 70%, oklch(0.68 0.28 310 / 0.20), transparent 60%)",
-        }}
+        className="pointer-events-none absolute -top-32 right-0 h-[600px] w-[600px] rounded-full opacity-60 blur-3xl"
+        style={{ background: "radial-gradient(circle, oklch(0.55 0.28 340 / 0.55), transparent 70%)" }}
+      />
+      <div
+        aria-hidden
+        className="pointer-events-none absolute -bottom-40 -left-20 h-[500px] w-[500px] rounded-full opacity-50 blur-3xl"
+        style={{ background: "radial-gradient(circle, oklch(0.45 0.28 300 / 0.55), transparent 70%)" }}
       />
       <div className="relative z-10 mx-auto flex w-full max-w-4xl flex-col items-center text-center">
         <span className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-3 py-1 text-xs uppercase tracking-[0.2em] text-white/70">
