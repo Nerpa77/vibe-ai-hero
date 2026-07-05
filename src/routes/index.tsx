@@ -145,7 +145,7 @@ function CtaContact() {
           <Sparkle className="h-3 w-3 text-neon-lime" />
           Контакты
         </span>
-        <h2 className="mt-6 font-display text-4xl uppercase leading-[0.95] text-white lg:text-6xl">
+        <h2 className="mt-6 font-display text-4xl uppercase leading-[1.3] text-white lg:text-6xl lg:leading-[1.25]">
           Есть идея? <span className="text-neon-lime">Давайте</span> сделаем
         </h2>
         <p className="mt-5 max-w-xl text-base text-white/70 lg:text-lg">
