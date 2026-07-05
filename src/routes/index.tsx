@@ -156,14 +156,16 @@ function CtaContact() {
             href="https://t.me/username"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center gap-2 rounded-full bg-neon-lime px-8 py-4 font-display text-base uppercase tracking-wide text-[oklch(0.14_0.03_300)] shadow-glow-lime transition-transform hover:-translate-y-0.5"
+            className="inline-flex items-center justify-center gap-2 rounded-full border-2 border-neon-lime bg-neon-lime px-8 py-4 font-display text-base uppercase tracking-wide text-[oklch(0.14_0.03_300)] shadow-glow-lime transition-transform hover:-translate-y-0.5"
+            style={{ boxShadow: "0 0 0 1px oklch(0.92 0.24 130), 0 0 24px oklch(0.92 0.24 130 / 0.65)" }}
           >
             <Send className="h-5 w-5" />
             Написать в Telegram
           </a>
           <a
             href="mailto:hello@example.com"
-            className="inline-flex items-center justify-center gap-2 rounded-full border border-white/20 bg-white/5 px-8 py-4 font-display text-base uppercase tracking-wide text-white transition-colors hover:bg-white/10"
+            className="inline-flex items-center justify-center gap-2 rounded-full border-2 border-neon-purple bg-white/5 px-8 py-4 font-display text-base uppercase tracking-wide text-white transition-colors hover:bg-white/10"
+            style={{ boxShadow: "0 0 0 1px oklch(0.68 0.28 310), 0 0 24px oklch(0.68 0.28 310 / 0.65)" }}
           >
             <Mail className="h-5 w-5" />
             Написать на Email
