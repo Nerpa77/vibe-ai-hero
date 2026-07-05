@@ -90,6 +90,12 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "Вайбкодинг — AI-продукты, MVP и лендинги" },
+      { name: "description", content: "Создаю AI-продукты через вайбкодинг: быстро собираю MVP, лендинги и веб-приложения с помощью современных AI-инструментов." },
+      { property: "og:description", content: "Создаю AI-продукты через вайбкодинг: быстро собираю MVP, лендинги и веб-приложения с помощью современных AI-инструментов." },
+      { name: "twitter:description", content: "Создаю AI-продукты через вайбкодинг: быстро собираю MVP, лендинги и веб-приложения с помощью современных AI-инструментов." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/38155c9b-60f9-40de-b5b6-2e7a372b807a/id-preview-565f2c11--07cd7fda-275b-4488-a98f-87c81108e1a2.lovable.app-1783278505639.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/38155c9b-60f9-40de-b5b6-2e7a372b807a/id-preview-565f2c11--07cd7fda-275b-4488-a98f-87c81108e1a2.lovable.app-1783278505639.png" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
