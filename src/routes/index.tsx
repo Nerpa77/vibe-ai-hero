@@ -119,9 +119,9 @@ function Index() {
       </div>
     </main>
 
+    <FeaturedProjects />
     <WhatIDo />
     <HowIWork />
-    <FeaturedProjects />
     <CtaContact />
     </>
   );
