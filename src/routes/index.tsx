@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { ArrowDown, Sparkle, ArrowUpRight, Rocket, Bot, Palette, Plug, Search, Sparkles, TestTube2, TrendingUp } from "lucide-react";
+import { ArrowDown, Sparkle, ArrowUpRight, Rocket, Bot, Palette, Plug, Search, Sparkles, TestTube2, TrendingUp, Send, Mail } from "lucide-react";
 
 
 import heroVibe from "@/assets/hero-vibe.png";
@@ -122,7 +122,53 @@ function Index() {
     <WhatIDo />
     <HowIWork />
     <FeaturedProjects />
+    <CtaContact />
     </>
+  );
+}
+
+function CtaContact() {
+  return (
+    <section id="contact" className="relative overflow-hidden bg-[oklch(0.14_0.03_300)] px-5 py-20 lg:px-10 lg:py-32">
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0 opacity-60"
+        style={{
+          background:
+            "radial-gradient(600px circle at 20% 30%, oklch(0.92 0.24 130 / 0.18), transparent 60%), radial-gradient(500px circle at 80% 70%, oklch(0.68 0.28 310 / 0.20), transparent 60%)",
+        }}
+      />
+      <div className="relative z-10 mx-auto flex w-full max-w-4xl flex-col items-center text-center">
+        <span className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-3 py-1 text-xs uppercase tracking-[0.2em] text-white/70">
+          <Sparkle className="h-3 w-3 text-neon-lime" />
+          Контакты
+        </span>
+        <h2 className="mt-6 font-display text-4xl uppercase leading-[0.95] text-white lg:text-6xl">
+          Есть идея? <span className="text-neon-lime">Давайте</span> сделаем
+        </h2>
+        <p className="mt-5 max-w-xl text-base text-white/70 lg:text-lg">
+          Расскажите о задаче — отвечу в течение дня и предложу, как быстрее всего запустить продукт.
+        </p>
+        <div className="mt-10 flex w-full flex-col items-stretch justify-center gap-4 sm:w-auto sm:flex-row">
+          <a
+            href="https://t.me/username"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center gap-2 rounded-full bg-neon-lime px-8 py-4 font-display text-base uppercase tracking-wide text-[oklch(0.14_0.03_300)] shadow-glow-lime transition-transform hover:-translate-y-0.5"
+          >
+            <Send className="h-5 w-5" />
+            Написать в Telegram
+          </a>
+          <a
+            href="mailto:hello@example.com"
+            className="inline-flex items-center justify-center gap-2 rounded-full border border-white/20 bg-white/5 px-8 py-4 font-display text-base uppercase tracking-wide text-white transition-colors hover:bg-white/10"
+          >
+            <Mail className="h-5 w-5" />
+            Написать на Email
+          </a>
+        </div>
+      </div>
+    </section>
   );
 }
 
