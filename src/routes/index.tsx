@@ -153,7 +153,7 @@ function CtaContact() {
         </p>
         <div className="mt-10 flex w-full flex-col items-stretch justify-center gap-4 sm:w-auto sm:flex-row">
           <a
-            href="https://t.me/username"
+            href="https://t.me/InnaShi_zakaz_bot"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center justify-center gap-2 rounded-full border-2 border-neon-lime bg-neon-lime px-8 py-4 font-display text-base uppercase tracking-wide text-[oklch(0.14_0.03_300)] shadow-glow-lime transition-transform hover:-translate-y-0.5"
@@ -163,7 +163,7 @@ function CtaContact() {
             Написать в Telegram
           </a>
           <a
-            href="mailto:hello@example.com"
+            href="mailto:InnaSh0525@proton.me"
             className="inline-flex items-center justify-center gap-2 rounded-full border-2 border-neon-purple bg-white/5 px-8 py-4 font-display text-base uppercase tracking-wide text-white transition-colors hover:bg-white/10"
             style={{ boxShadow: "0 0 0 1px oklch(0.68 0.28 310), 0 0 24px oklch(0.68 0.28 310 / 0.65)" }}
           >
