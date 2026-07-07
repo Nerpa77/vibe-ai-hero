@@ -93,9 +93,13 @@ function Index() {
           <div className="relative aspect-square w-full max-w-[120px] sm:max-w-[240px] md:max-w-[300px] lg:max-w-[560px]">
             <img
               src={heroVibe}
+              srcSet={`${heroVibeMobile} 640w, ${heroVibe} 1024w`}
+              sizes="(max-width: 640px) 240px, (max-width: 1024px) 300px, 560px"
               alt="3D неоновая звезда с курсором — символ вайбкодинга"
               width={1024}
               height={1024}
+              fetchPriority="high"
+              decoding="async"
               className="animate-float-slow relative z-10 h-full w-full object-contain"
               style={{ filter: "drop-shadow(0 20px 60px oklch(0.55 0.28 340 / 0.6))" }}
             />
