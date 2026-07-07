@@ -2,10 +2,14 @@ import { createFileRoute } from "@tanstack/react-router";
 import { ArrowDown, Sparkle, ArrowUpRight, Rocket, Bot, Palette, Plug, Search, Sparkles, TestTube2, TrendingUp, Send, Mail } from "lucide-react";
 
 
-import heroVibe from "@/assets/hero-vibe.png";
-import projectStudyflow from "@/assets/project-studyflow.jpg";
-import projectNeuroanalyst from "@/assets/project-neuroanalyst.jpg";
-import projectLaunchpro from "@/assets/project-launchpro.jpg";
+import heroVibe from "@/assets/hero-vibe.webp";
+import heroVibeMobile from "@/assets/hero-vibe-640.webp";
+import projectStudyflow from "@/assets/project-studyflow.webp";
+import projectStudyflowMobile from "@/assets/project-studyflow-480.webp";
+import projectNeuroanalyst from "@/assets/project-neuroanalyst.webp";
+import projectNeuroanalystMobile from "@/assets/project-neuroanalyst-480.webp";
+import projectLaunchpro from "@/assets/project-launchpro.webp";
+import projectLaunchproMobile from "@/assets/project-launchpro-480.webp";
 
 
 export const Route = createFileRoute("/")({
