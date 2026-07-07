@@ -274,10 +274,13 @@ function ProjectCard({ project }: { project: (typeof projects)[number] }) {
 
         <img
           src={project.image}
+          srcSet={`${project.imageMobile} 480w, ${project.image} 1024w`}
+          sizes="(max-width: 640px) 128px, (max-width: 768px) 176px, (max-width: 1024px) 224px, 400px"
           alt={`Превью проекта ${project.title}`}
           width={1024}
           height={768}
           loading="lazy"
+          decoding="async"
           className="absolute inset-0 h-full w-full object-contain transition-transform duration-500 group-hover:scale-105 lg:object-cover"
         />
 
