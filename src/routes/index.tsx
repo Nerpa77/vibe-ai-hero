@@ -2,10 +2,14 @@ import { createFileRoute } from "@tanstack/react-router";
 import { ArrowDown, Sparkle, ArrowUpRight, Rocket, Bot, Palette, Plug, Search, Sparkles, TestTube2, TrendingUp, Send, Mail } from "lucide-react";
 
 
-import heroVibe from "@/assets/hero-vibe.png";
-import projectStudyflow from "@/assets/project-studyflow.jpg";
-import projectNeuroanalyst from "@/assets/project-neuroanalyst.jpg";
-import projectLaunchpro from "@/assets/project-launchpro.jpg";
+import heroVibe from "@/assets/hero-vibe.webp";
+import heroVibeMobile from "@/assets/hero-vibe-640.webp";
+import projectStudyflow from "@/assets/project-studyflow.webp";
+import projectStudyflowMobile from "@/assets/project-studyflow-480.webp";
+import projectNeuroanalyst from "@/assets/project-neuroanalyst.webp";
+import projectNeuroanalystMobile from "@/assets/project-neuroanalyst-480.webp";
+import projectLaunchpro from "@/assets/project-launchpro.webp";
+import projectLaunchproMobile from "@/assets/project-launchpro-480.webp";
 
 
 export const Route = createFileRoute("/")({
@@ -89,9 +93,13 @@ function Index() {
           <div className="relative aspect-square w-full max-w-[120px] sm:max-w-[240px] md:max-w-[300px] lg:max-w-[560px]">
             <img
               src={heroVibe}
+              srcSet={`${heroVibeMobile} 640w, ${heroVibe} 1024w`}
+              sizes="(max-width: 640px) 240px, (max-width: 1024px) 300px, 560px"
               alt="3D неоновая звезда с курсором — символ вайбкодинга"
               width={1024}
               height={1024}
+              fetchPriority="high"
+              decoding="async"
               className="animate-float-slow relative z-10 h-full w-full object-contain"
               style={{ filter: "drop-shadow(0 20px 60px oklch(0.55 0.28 340 / 0.6))" }}
             />
@@ -184,6 +192,7 @@ const projects = [
     accent: "lime" as const,
     gradient: "linear-gradient(135deg, oklch(0.92 0.24 130 / 0.35), oklch(0.55 0.28 200 / 0.35))",
     image: projectStudyflow,
+    imageMobile: projectStudyflowMobile,
   },
   {
     title: "НейроАналитик",
@@ -192,6 +201,7 @@ const projects = [
     accent: "purple" as const,
     gradient: "linear-gradient(135deg, oklch(0.68 0.28 310 / 0.4), oklch(0.45 0.28 260 / 0.4))",
     image: projectNeuroanalyst,
+    imageMobile: projectNeuroanalystMobile,
   },
   {
     title: "LaunchPro",
@@ -200,6 +210,7 @@ const projects = [
     accent: "magenta" as const,
     gradient: "linear-gradient(135deg, oklch(0.65 0.30 340 / 0.4), oklch(0.55 0.28 20 / 0.4))",
     image: projectLaunchpro,
+    imageMobile: projectLaunchproMobile,
   },
 ];
 
@@ -263,10 +274,13 @@ function ProjectCard({ project }: { project: (typeof projects)[number] }) {
 
         <img
           src={project.image}
+          srcSet={`${project.imageMobile} 480w, ${project.image} 1024w`}
+          sizes="(max-width: 640px) 128px, (max-width: 768px) 176px, (max-width: 1024px) 224px, 400px"
           alt={`Превью проекта ${project.title}`}
           width={1024}
           height={768}
           loading="lazy"
+          decoding="async"
           className="absolute inset-0 h-full w-full object-contain transition-transform duration-500 group-hover:scale-105 lg:object-cover"
         />
 
