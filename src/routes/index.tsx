@@ -192,6 +192,7 @@ const projects = [
     accent: "lime" as const,
     gradient: "linear-gradient(135deg, oklch(0.92 0.24 130 / 0.35), oklch(0.55 0.28 200 / 0.35))",
     image: projectStudyflow,
+    imageMobile: projectStudyflowMobile,
   },
   {
     title: "НейроАналитик",
@@ -200,6 +201,7 @@ const projects = [
     accent: "purple" as const,
     gradient: "linear-gradient(135deg, oklch(0.68 0.28 310 / 0.4), oklch(0.45 0.28 260 / 0.4))",
     image: projectNeuroanalyst,
+    imageMobile: projectNeuroanalystMobile,
   },
   {
     title: "LaunchPro",
@@ -208,6 +210,7 @@ const projects = [
     accent: "magenta" as const,
     gradient: "linear-gradient(135deg, oklch(0.65 0.30 340 / 0.4), oklch(0.55 0.28 20 / 0.4))",
     image: projectLaunchpro,
+    imageMobile: projectLaunchproMobile,
   },
 ];
 
